@@ -5,7 +5,7 @@ require('dotenv').config();
  */
 
 module.exports = {
-    PORT: process.env.POST || 80,
+    PORT: process.env.PORT || 80,
     ENV: process.env.NODE_ENV === 'dev' || 'prod',
     MONGO_HOST: process.env.MONGO_HOST || 'localhost',
     MONGO_PORT: process.env.MONGO_PORT || 27017,
