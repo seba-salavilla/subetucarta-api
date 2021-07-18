@@ -77,7 +77,7 @@ window.onload = function () {
             e.preventDefault();
             $.ajax({
                 type: "POST",
-                url: "http://localhost:3000/api/pb/resto/registry",
+                url: "https://sube-tu-carta.herokuapp.com/api/pb/resto/registry",
                 data: new FormData(this), //$(this).serialize(),
                 processData: false,
                 contentType: false,
