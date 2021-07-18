@@ -52,12 +52,19 @@ class Controller{
             if(!result){
                 return res.json({success: false,status: 400, message: 'Sin información.', payload: false});
             }
-            return res.json({
+            var file = Buffer.from(result.file.base64, 'base64');
+            res.writeHead(200, {
+                'Content-Type': result.file.mimetype,
+                'Content-Length': file.length
+            });
+            res.end(file);
+            
+            /*return res.json({
                 success: true, 
                 status: 200, 
                 message: 'Restaurant encontrado.', 
                 payload: result
-            });
+            });*/
         } catch (err) {
             Logger.fatal(`${Controller.obtenerMenuRestaurantID.name} : error catch `, err)
             res.status(500).send({success:false, status:500, message:`Error en los servicios.`, payload:{comp: params.component, hdl:req.opCode}})
