@@ -28,7 +28,7 @@ class Controller{
             }
 
             // Genera nuevo QR
-            const QR = await QRCode.toDataURL('http://localhost:3000/api/pb/resto/menu/'+result.insertedId);
+            const QR = await QRCode.toDataURL(process.env.URL_QR+result.insertedId);
             const updt = await Model.addQRToRestaurant(result.insertedId, QR);
 
             if(!updt || updt.error) throw Error("Error al actualizar QR restaurant.");
