@@ -1,0 +1,356 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+    <meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>Subetucarta - QR</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Codystar&family=Darker+Grotesque:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/preloader.css">    
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">    
+</head>
+<body class="loaded">
+
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__first"></div>
+            <div class="preloader__second"></div>
+            <div class="preloader__third"></div>
+        </div>
+    </div>
+
+    <div class="page-container">
+
+        <!-- BEGIN HEADER -->
+        <header class="header">
+            <div class="header__cols">
+                <div class="header__left">
+                    <div class="header__inner-cols">
+                        <div class="header__inner-col header__inner-col_mob">
+                            <button class="mob-button js-mob-open">
+                                <span class="mob-button__icon"></span>
+                            </button>
+                        </div>
+                        <div class="header__inner-col">
+                            <a class="header-logo" href="#">
+                                <img class="header-logo__image" src="assets/img/logo/logo3.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__center js-from-1">
+
+                </div>
+                <div class="header__right js-from-2">
+                    <div class="header-mob js-content-2">
+                        <ul class="main-nav">
+                            <li class="main-nav__item">
+                                <a class="main-nav__link js-scrolltoid" href="#features">Cómo funciona</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link js-scrolltoid" href="#download">Sube tu Carta</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link js-scrolltoid" href="#ui">Contáctanos</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__button js-scrolltoid" href="#trial">Generar QR</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER END -->
+
+        <!-- MOBILE NAVIGATION -->
+        <div class="hide-mob js-mob-hide">
+            <div class="hide-mob__bg">
+                <button class="hide-mob__close close-button close-button_orange js-mob-close"></button>  
+                <div class="hide-mob__mask js-mob-close"></div>
+                <div class="hide-mob__content js-to-1"></div>
+                <div class="hide-mob__bottom js-to-2"></div>                
+            </div>              
+        </div>
+        <!-- MOBILE NAVIGATION END -->        
+
+        <!-- BEGIN MAIN -->
+        <main class="main">      
+
+            <!-- BEGIN FIRST SCREEN -->
+            <section class="first-screen">
+                <div class="first-screen__main wrapper">
+                    <div class="first-screen__max">
+                        <div class="first-screen__content">
+                            <div class="first-screen__cell">
+                                <span class="above-title">Genera tu código QR</span>
+                                <h1 class="first-screen__title">Código QR para tu carta menú</h1>
+                                <p class="first-screen__text">Sube tu carta de menú y generamos el código QR para que lo utilices en tu negocio.</p>
+                                <a class="first-screen__button button" href="#">
+                                    <span class="button__text">Comenzar</span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="first-screen__phone" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/background/menucartahand.png" alt="" data-lazy-mob>
+                        <!--<img class="first-screen__elements" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/svg/first-screen-elements.svg" alt="" data-lazy-mob>-->
+                    </div>
+                </div>
+                <!--<div class="first-screen__pseudotext" data-title="CODIGO QR PARA TU MENU DE RESTAURANT"></div>-->
+                <div class="first-screen__bg-1" data-bg="assets/img/first-screen-bg.jpg" data-lazy-mob></div>
+                <div class="first-screen__bg-2" data-bg="assets/img/first-screen-bottom.png" data-lazy-mob></div>
+                <div class="first-screen__bg-3" data-bg="assets/img/background/miqr.png" data-lazy-mob></div>
+            </section>
+            <!-- FIRST SCREEN END -->
+
+            <div class="main-top">
+
+                <!-- FORM QR GENERATOR -->
+                <section class="what-you-get">
+                    <div class="downloads-block__main wrapper">
+                        <div class="downloads-block__cols">
+                            <div class="downloads-block__left">
+                                <div class="downloads">
+                                    <h2 class="downloads__title main-title main-title_align-left" data-title="Completa el formulario y sube tu carta" id="download">
+                                        <span class="main-title__text">Ingresar datos para generar el código QR</span>
+                                    </h2>
+                                    <p class="downloads__text">La carta debe estar en formato PDF, PNG o JPG. El código QR generado se enviará al correo ingresado.</p>
+                                    <div class="form__generator">
+                                        <form id="form_qr">
+                                            <input name="nombre" class="subscribe__input text-input" type="text" placeholder="Nombre de tu local" value="Gros Sandwicheria">
+                                            <input name="email" class="subscribe__input text-input" type="email" placeholder="E-mail" value="sebasay1@gmail.com">
+                                            <input name="direccion" class="subscribe__input text-input" type="text" placeholder="Dirección" value="Amunategui 212, Iquique - Chile">
+                                            <input type="file" name="archivo" class="subscribe__input text-input custom-file-input" accept="image/png, image/jpeg, .pdf" required>
+                                            <button type="submit" class="downloads__button button button_big btn_submit">
+                                                <span class="button__cols">
+                                                    <span class="button__col">
+                                                        <span class="button__icon button__icon_1"></span>
+                                                    </span>
+                                                    <span class="button__col">
+                                                        <span class="button__text-small">Código QR</span>
+                                                        <span class="button__text-big">Generar</span>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="downloads-block__right">
+                                <p class="text-qr">Tu Código QR aparecerá aquí</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="downloads-block__right-element side-element" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/svg/side-element_1.svg" alt="">
+                </section>
+                <!-- FORM QR GENERATOR -->
+
+            </div>
+
+            <!-- BEGIN PRESENTATION -->
+            <section class="presentation-block">
+                <div class="presentation-block__main wrapper">
+                    <h3 class="presentation-block__title main-title main-title_white" data-title="Watch our UI presentation" id="ui">
+                        <span class="main-title__text">Watch our UI presentation</span>
+                    </h3>        
+                    <div class="ui-slider js-slider">
+                        <div class="ui-slider__arrows arrows-1 js-slider-arrows">
+
+                        </div>
+                        <div class="ui-slider__all">
+                            <div class="ui-slider__list-wrap js-slider-loader loaded">
+                                <div class="ui-slider__list js-slider-list">
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_5.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_6.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_5.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="ui-slider__item js-slider-item">
+                                        <div class="ui-slider__image-wrap">
+                                            <img class="ui-slider__image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/ui-image_6.png" alt="">
+                                        </div>
+                                    </div>                                
+                                </div>
+                                <div class="ui-slider__bg">
+                                    <img class="ui-slider__bg-left" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/svg/presentation-left.svg" alt="">
+                                    <img class="ui-slider__bg-right" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/svg/presentation-right.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+                <div class="presentation-block__bg"></div>
+            </section>
+            <!-- PRESENTATION END -->
+            
+        </main>
+        <!-- MAIN END -->
+        
+        <!-- BEGIN FOOTER -->
+        <footer class="footer">
+
+            <!-- BEGIN SUBSCRIPTION -->
+            <div class="subscription wrapper">
+                <div class="subscription__bg">
+                    <div class="subscription__max">
+                        <span class="above-title">newsletter</span>
+                        <span class="subscription__title">Be aware of new features</span>
+                        <span class="subscription__text">Culpa non ex tempor qui nulla laborum. Laboris culpa ea ipsum tempor duis do ullamco eiusmod officia magna ad id.</span>
+                        <form>
+                            <div class="subscribe">
+                                <div class="subscribe__left">
+                                    <input class="subscribe__input text-input" type="text" placeholder="Email">
+                                </div>
+                                <div class="subscribe__right">
+                                    <button class="subscribe__button button">
+                                        <span class="button__text">Subscribe</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>                        
+                    </div>
+                    <img class="subscription__envelope" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-lazy="assets/img/svg/subscription.svg" alt="">
+                </div>
+            </div>
+            <!-- SUBSCRIPTION END -->
+
+            <div class="footer-top wrapper">
+                <a class="footer-logo" href="#">Upland</a>
+                <div class="footer-nav">
+                    <ul class="main-nav main-nav_center">
+                        <li class="main-nav__item">
+                            <a class="main-nav__link js-scrolltoid" href="#features">Features</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link js-scrolltoid" href="#download">Download app</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link js-scrolltoid" href="#ui">UI screens</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link js-scrolltoid" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__link js-scrolltoid" href="#faq">FAQ</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__button js-scrolltoid" href="#trial">Free trial</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom__main wrapper">
+                    <span class="copyrights">&copy; All rights reserved. Upland 2020</span>
+                </div>
+            </div>  
+            <div class="footer__bg" data-bg="assets/img/footer-bg.png"></div>          
+
+        </footer>
+        <!-- FOOTER END -->       
+
+    </div> 
+
+	<!-- BEGIN TRIAL POPUP -->
+	<div class="popup js-popup" id="trial-popup">
+		<div class="popup__row">
+			<div class="popup__cell">
+				<div class="popup__window popup__window_bg">
+                    <button class="popup__close close-button js-popup-close"></button>
+                    <div class="popup__content">
+                        <form>
+                            <div class="trial-form">
+                                <span class="trial-form__title">Get a free trial for <span class="orange">30</span>&nbsp;days</span>
+                                <span class="trial-form__text">Culpa non ex tempor qui nulla laborum. Laboris culpa ea incididunt dolore ipsum tempor duis do ullamc.</span>
+                                <input class="text-input" type="text" placeholder="Name">
+                                <input class="text-input" type="email" placeholder="Email">
+                                <textarea class="textarea" placeholder="Message"></textarea>
+                                <button class="trial-form__button button" type="submit">
+                                    <span class="button__text">Get a free trial</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>  
+                    <span class="popup__pseudotitle" data-title="Get a free trial for 30 days"></span>        
+				</div>
+            </div>
+            <div class="popup__mask js-popup-close"></div>
+        </div>
+	</div>
+	<!-- TRIAL POPUP END -->     
+
+	<!-- BEGIN VIDEO POPUP -->
+	<div class="popup popup_video js-popup" id="video-popup">
+		<div class="popup__row">
+			<div class="popup__cell">
+				<div class="popup__window">
+					<button class="popup__close close-button close-button_white js-popup-close"></button>
+                    <div class="video-frame js-responsive-video js-video-frame"></div> 
+				</div>
+            </div>
+            <div class="popup__mask js-popup-close"></div>
+        </div>
+	</div>
+	<!-- VIDEO POPUP END -->          
+
+    <script src="assets/js/libs/jquery-3.3.1.min.js"></script> 
+    <script src="assets/js/libs/jquery-migrate-1.4.1.min.js"></script>   
+    <script src="assets/js/preloader.js"></script>  
+    <script src="assets/js/components/slick.js"></script>
+    <script src="assets/js/components/fitvids.js"></script>
+    <script src="assets/js/main.js"></script>  
+
+</body>
+</html>
