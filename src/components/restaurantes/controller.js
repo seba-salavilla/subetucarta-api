@@ -28,7 +28,7 @@ class Controller{
             }
 
             // Genera nuevo QR
-            const QR = await QRCode.toDataURL(process.env.URL_QR+result.insertedId);
+            const QR = await QRCode.toDataURL(process.env.URL_CARTA+result.insertedId);
             const updt = await Model.addQRToRestaurant(result.insertedId, QR);
 
             if(!updt || updt.error) throw Error("Error al actualizar QR restaurant.");
@@ -52,12 +52,17 @@ class Controller{
             if(!result){
                 return res.json({success: false,status: 400, message: 'Sin información.', payload: false});
             }
-            var file = Buffer.from(result.file.base64, 'base64');
-            res.writeHead(200, {
-                'Content-Type': result.file.mimetype,
-                'Content-Length': file.length
-            });
-            res.end(file);
+
+            if(result.file.mimetype === 'application/pdf'){
+                return res.send('<div style="text-align:center"><iframe src="https://docs.google.com/viewer?url='+process.env.URL_PDF+body.id+'&embedded=true" frameborder="0" height="100%" width="100%"></iframe></div>')
+            }else{
+                var file = Buffer.from(result.file.base64, 'base64');
+                res.writeHead(200, {
+                    'Content-Type': result.file.mimetype,
+                    'Content-Length': file.length
+                });
+                return res.end(file);
+            }
             
             /*return res.json({
                 success: true, 
@@ -65,6 +70,27 @@ class Controller{
                 message: 'Restaurant encontrado.', 
                 payload: result
             });*/
+        } catch (err) {
+            Logger.fatal(`${Controller.obtenerMenuRestaurantID.name} : error catch `, err)
+            res.status(500).send({success:false, status:500, message:`Error en los servicios.`, payload:{comp: params.component, hdl:req.opCode}})
+        }
+    }
+
+    static async obtenerPDFMenuRestaurantID(req, res){
+        try {
+            const body = req.bodyParser
+            const result = await Model.getRestaurantByID(body.id)
+            if(!result){
+                return res.json({success: false,status: 400, message: 'Sin información.', payload: false});
+            }
+            var file = Buffer.from(result.file.base64, 'base64');
+            
+            res.writeHead(200, {
+                'Content-Type': result.file.mimetype,
+                'Content-Length': file.length
+            });
+
+            res.end(file);
         } catch (err) {
             Logger.fatal(`${Controller.obtenerMenuRestaurantID.name} : error catch `, err)
             res.status(500).send({success:false, status:500, message:`Error en los servicios.`, payload:{comp: params.component, hdl:req.opCode}})

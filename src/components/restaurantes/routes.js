@@ -18,6 +18,16 @@ const routes = [
         handler : 'obtenerMenuRestaurantID',
         schemeProperty: 'validObtenerRestaurantID',
         disable: false
+    },
+    {
+        path : '/pdf/menu/:id',
+        type : 'get',
+        code : '002',
+        desc : 'Obtiene PDF menu  del restaurant por ID',
+        auth : false,
+        handler : 'obtenerPDFMenuRestaurantID',
+        schemeProperty: 'validObtenerRestaurantID',
+        disable: false
     }
 ]
 
