@@ -2,7 +2,7 @@ const { GLOBAL, Logger } = require('../../../config')
 const params = require('./params')
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt')
+//const bcrypt = require('bcrypt')
 const Model = require('./models/model');
 
 class Controller{

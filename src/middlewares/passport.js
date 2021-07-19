@@ -5,7 +5,7 @@ const localStrategy = require('passport-local').Strategy;
 //const GoogleStrategy = require('passport-google-oauth20');
 const GoogleTokenStrategy = require('passport-google-verify-token').Strategy
 const FacebookTokenStrategy = require('passport-facebook-token');
-const bcrypt = require('bcrypt')
+//const bcrypt = require('bcrypt')
 const Model = require('../components/auth/models/model');
 
 /**
