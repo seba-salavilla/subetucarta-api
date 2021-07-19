@@ -12,7 +12,7 @@ class Controller{
             const data = req.bodyParser;
             const existe = await Model.getRestaurantByEmail(data.email);
             if(existe){
-                return res.json({success: true, status: 200, message: 'Para actualizar sus datos contactese a clientes@subetucarta.cl.', payload: existe.QR });
+                return res.json({success: true, status: 200, message: 'Para actualizar tus datos contactar a clientes@subetucarta.cl.', payload: existe.QR });
             }
 
             const file = {
@@ -54,7 +54,7 @@ class Controller{
             }
 
             if(result.file.mimetype === 'application/pdf'){
-                return res.send('<div style="text-align:center"><iframe src="https://docs.google.com/viewer?url='+process.env.URL_PDF+body.id+'&embedded=true" frameborder="0" height="100%" width="100%"></iframe></div>')
+                return res.send('<div style="text-align:center"><iframe src="https://docs.google.com/viewer?url='+process.env.URL_PDF+body.id+'&embedded=true" frameborder="0" height="100%" width="100%" style="border: none;"></iframe></div>')
             }else{
                 var file = Buffer.from(result.file.base64, 'base64');
                 res.writeHead(200, {

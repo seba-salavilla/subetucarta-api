@@ -920,8 +920,8 @@ a {
 .footer {
     min-width: 0;
     width: 100%;
-    min-height: 546px;
-    margin: 194px 0 0;
+    min-height: 300px;
+    margin: 100px 0 0;
     position: relative;
     z-index: 1;
     -webkit-flex: 0 0 auto;
@@ -1015,7 +1015,9 @@ a {
 .footer-bottom {
     padding-top: 14px;
     padding-bottom: 14px;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     z-index: 1;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1111,7 +1113,7 @@ a {
 .first-screen__phone {
     width: 730px;
     /*height: 784px;*/
-    margin: -80px 0 0 60px;
+    margin: -115px 0 0 60px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -1565,8 +1567,6 @@ a {
     border-radius: 31px;
 }
 .text-success-qr{
-    position: absolute;
-    bottom: 75px;
     font-size: 18px;
     width: 380px;
     text-align: center;
@@ -1575,16 +1575,22 @@ a {
     margin-top:20px !important;
 }
 .downloads-block__right {
-    max-width: 512px;
-    max-height: 512px;
+    /*max-width: 512px;
+    max-height: 512px;*/
     height: 512px;
     width: 512px;
     /*max-width: 555px;*/
     /*padding: 31px 0 0;*/
     background: url(../img/background/qr-sr.png) 0 0/100% 100% no-repeat;
+    background-size: 440px 440px;
+    background-position: center;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
+}
+.downloads-block__right img{
+    margin: 35px 0 0 !important;
 }
 .downloads-block__right-element {
     margin: 0 0 0 616px;
@@ -3721,9 +3727,9 @@ a {
     }
 }
 @media screen and (max-width: 1024px) {
-    p {
+    /*p {
         padding: 0 0 27px;
-    }
+    }*/
     ul li {
         padding: 0 0 5px 19px;
     }
