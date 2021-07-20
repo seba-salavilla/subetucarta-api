@@ -77,7 +77,7 @@ window.onload = function () {
             e.preventDefault();
             $.ajax({
                 type: "POST",
-                url: "http://subetucarta.cl/api/pb/resto/registry",
+                url: "https://subetucarta.cl/api/pb/resto/registry",
                 data: new FormData(this), //$(this).serialize(),
                 processData: false,
                 contentType: false,
@@ -90,7 +90,7 @@ window.onload = function () {
                     }
                 },
                 error: function(data){
-                    $(".downloads-block__right").html('<p class="text-qr">'+data.responseJSON.message || "Error inesparado lo sentimos."+'</p>')
+                    $(".downloads-block__right").html('<p class="text-qr">'+(data.responseJSON && data.responseJSON.message ? data.responseJSON.message :"Error inesparado lo sentimos.")+'</p>')
                 }
             });
 		});
